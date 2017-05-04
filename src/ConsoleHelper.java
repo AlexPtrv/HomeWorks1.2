@@ -7,29 +7,38 @@ public class ConsoleHelper {
     ArrayHolder arrayHolder=new ArrayHolder();
 public void start() {
 
-    hello();
-    arrayHolder.getnumtomas();
-    arrayHolder.valuesofarraays();
+    System.out.println("Привет!!");
+    System.out.println("Запуск програмы");
+    System.out.println("Загрузка.....");
+    System.out.println("Введите размер массива: ");
+    arrayHolder.getNumToMas();
+    arrayHolder.valuesOfArraays();
     menu();
 
     for (int f=0;f<20000000;f++){
         if (scn.hasNextInt()) {
-            choiceinmenu();
+            choiceInMenu();
         } else
             System.out.println("Пожалуйста введите только от 1 до 3!");
     }}
 
-    private void choiceinmenu() {
+    private void choiceInMenu() {
         do {
             selection=scn.nextInt();
 
         switch (selection){
             case 1 :
                 arrayHolder.Sort();
+                System.out.println("Хотите найти число по значению введите цифру 2\n" +
+                        "Если нет, нажмите любую кнопку кроме 2. ");
                 findAfterSort();
                 break;
             case 2:
-                arrayHolder.findAnum();
+                System.out.println("В масиве есть такие числа:"+Arrays.toString(arrayHolder.getmas()));
+                System.out.println("Введите число, которое нужно найти: ");
+                arrayHolder.findANum();
+                System.out.println("Хотите сделать сортировку чисел?Если да, введите цифру 1 \n" +
+                        "Если нет, нажмите любую цыфру кроме 1. ");
             sortAfterFind();
                 break;
             case 3:
@@ -49,7 +58,6 @@ public void start() {
         System.out.println("1.Для сортировки чисел введите цифру 1 \n" +
                 "2.Для поиска числа по значению введите цифру 2\n" + "3.Если хотите выйти нажмите любую кнопку.");
 
-
     }
 
     private void goodbye() {
@@ -57,20 +65,12 @@ public void start() {
         System.out.println("Выход.....");
     }
     private void error(){
-    String s="";
         System.out.println("Введите число от 1 до 3!");
 
         }
 
-private void hello(){
-    System.out.println("Привет!!");
-    System.out.println("Запуск програмы");
-    System.out.println("Загрузка.....");
-}
 private void sortAfterFind() {
 
-    System.out.println("Хотите сделать сортировку чисел?Если да, введите цифру 1 \n" +
-            "Если нет, нажмите любую цыфру кроме 1. ");
     int selection2 = scn.nextInt();
     switch (selection2) {
         case 1:
@@ -83,15 +83,12 @@ private void sortAfterFind() {
 }
 private void findAfterSort(){
 
-    System.out.println("Хотите найти число по значению введите цифру 2\n" +
-            "Если нет, нажмите любую кнопку кроме 2. ");
-    for(int f2=0;f2<2;){
-       scn.hasNext();
-        if (scn.hasNextInt()){
-            arrayHolder.findAnum();}
+
+        scn.hasNext();
+    if (scn.hasNextInt(2)){
+            arrayHolder.findANum();}
         else
             System.out.println("Выход...");
 
 }
-
-}}
+}
