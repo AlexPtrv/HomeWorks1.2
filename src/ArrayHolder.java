@@ -18,20 +18,14 @@ public class ArrayHolder {
         return lengthmas;
     }
 
-     void getnumtomas() {
-        System.out.println("Введите размер массива: ");
-            scn1.hasNext();
-         if (scn1.hasNextInt()) {
-             lengthmas = scn1.nextInt();
-            mas = new int[getlengthmas()];}
-             else if (scn1.hasNext()){
-             System.out.println("Пожалуйста введите только число!");
-         }
+     void getNumToMas() {
 
-         valuesofarraays();
+             lengthmas = scn1.nextInt();
+            mas = new int[getlengthmas()];
+
      }
 
- void valuesofarraays() {
+ void valuesOfArraays() {
         for (int f = 0; f < getmas().length; f++) {
             System.out.println("Введите значение массива " + f + ":");
             getmas()[f] = scn1.nextInt();
@@ -45,11 +39,7 @@ public class ArrayHolder {
 
          }
 
-void findAnum() {
-
-
-    System.out.println("В масиве есть такие числа:"+Arrays.toString(getmas()));
-    System.out.println("Введите число, которое нужно найти: ");
+void findANum() {
     int number = scn1.nextInt();
     for (int f2 = 0; f2 < getmas().length; f2++) {
         if ( number==getmas()[f2] ){
@@ -57,7 +47,7 @@ void findAnum() {
                     "и содержиться в ячейке № " + f2);}
        else if (number != getmas()[f2]) {
                 System.out.println("Введите другое число.");
-                findAnum();
+                findANum();
 
             }     }
     }
